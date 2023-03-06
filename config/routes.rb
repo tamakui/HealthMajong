@@ -32,5 +32,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :edit. :create, :update]
   end
   
+  #ゲストログイン
+  post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
