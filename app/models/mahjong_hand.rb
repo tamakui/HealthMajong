@@ -1,0 +1,2 @@
+class MahjongHand < ApplicationRecord
+end
