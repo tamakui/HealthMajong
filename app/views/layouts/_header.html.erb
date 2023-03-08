@@ -19,7 +19,7 @@
               <%#=  link_to "ジャンル一覧", admin_genres_path ,class: 'nav-link text-light' %>
             </li>
             <li>
-              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete,class: 'nav-link text-light' %>
+              <%= button_to "ログアウト", destroy_admin_session_path, method: :delete,class: 'nav-link text-light' %>
             </li>
           <!--end_usersログイン時のヘッダー-->
           <% elsif end_user_signed_in? %>

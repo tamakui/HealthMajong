@@ -1,2 +1,20 @@
-<h1>Admin::MahjongHands#show</h1>
-<p>Find me in app/views/admin/mahjong_hands/show.html.erb</p>
+<h1>役詳細</h1>
+
+<%= image_tag @mahjong_hand.get_image, class: "img-fluid" %>
+<table>
+  <tbody>
+    <tr>
+      <td>役名</td>
+      <td><%= @mahjong_hand.name %></td>
+    </tr>
+    <tr>
+      <td>役説明</td>
+      <td><%= @mahjong_hand.describe %></td>
+    </tr>
+    <tr>
+      <td>ジャンル</td>
+      <td><%= @mahjong_hand %></td>
+    </tr>
+  </tbody>
+</table>
+<% link_to "編集する", edit_admin_mahjong_hand_path(@mahjong_hand.id), class: 'btn btn-success' %>
