@@ -1,2 +1,43 @@
-<h1>Admin::EndUsers#show</h1>
-<p>Find me in app/views/admin/end_users/show.html.erb</p>
+<div class='container'>
+  <div class='row'>
+      <div class='col-4'>
+        <h1 class="mb-3"><%= @end_user.login_name %>さんの会員詳細</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>会員ID</th>
+              <th><%= @end_user_id %></th>
+            </tr>
+            <tr>
+              <th>氏名</th>
+              <th><%= @end_user.last_name %><%= @end_user.first_name %></th>
+            </tr>
+            <tr>
+              <th>フリガナ</th>
+              <th><%= @end_user.last_name_kana %><%= @end_user.first_name_kana %></th>
+            </tr>
+            <tr>
+              <th>ログイン名</th>
+              <th><%= @end_user.login_name %></th>
+            </tr>
+            <tr>
+              <th>メールアドレス</th>
+              <th><%= @end_user.email %></th>
+            </tr>
+            <tr>
+              <th>会員ステータス</th>
+              <th>
+                <% if @customer.is_deleted == false %>
+                  <strong class="text-success">有効></strong>
+                <% else %>
+                  <strong class="text-muted">退会</strong>
+                <% end %>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        <%= link_to "編集する", edit_admin_end_user_path, class:"btn btn-success ml-4" %>
+        <%= link_to "コメント一覧を見る", admin_top_path, class: "btn btn-primary ml-4" %>
+      </div>
+  </div>
+</div>

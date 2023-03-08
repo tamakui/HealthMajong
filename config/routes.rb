@@ -29,8 +29,10 @@ Rails.application.routes.draw do
     get 'top' => 'homes#top', as: 'top'
     resources :end_users, only: [:index, :show, :edit, :update]
     resources :mahjong_hands, only: [:new, :index, :show, :edit, :create, :update]
-    resources :genres, only: [:index, :edit. :create, :update]
+    resources :genres, only: [:index, :edit, :create, :update]
   end
   
+  #ゲストログイン
+  post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,2 +1,52 @@
-<h1>Admin::EndUsers#edit</h1>
-<p>Find me in app/views/admin/end_users/edit.html.erb</p>
+<div class='container'>
+  <div class='row'>
+    <div class='col-4'>
+      <h1 class="mb-3"><%= @end_user.login_name %>さんの会員情報編集</h1>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-4'>
+      <table>
+          <tbody>
+            <tr>
+              <td>会員ID</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+  <div class='row'>
+    <% form_with model: @end_user, url: admin_end_user_path, local:true do |f| %>
+      <div class="form-group">
+        <%= f.label :"氏名" %>
+        <%= f.text_field :last_name %>
+        <%= f.text_field :first_name %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"フリガナ" %>
+        <%= f.text_field :last_name_kana %>
+        <%= f.text_field :first_name_kana %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"ログイン表示名" %>
+        <%= f.text_field :login_name %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"メールアドレス" %>
+        <%= f.text_field :email %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"会員ステータス" %>
+        <%= f.radio_button :is_deleted, false, checked: true %><%= f.label :is_deleted, "有効" %>
+        <%= f.radio_button :is_deleted, true %><%= f.label :is_deleted, "退会" %>
+      </div>
+      <div>
+        <%= f.submit "変更を保存", class: "btn btn-success" %>
+      </div>
+      <% end %>
+  </div>
+</div>
