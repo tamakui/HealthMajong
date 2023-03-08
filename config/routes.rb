@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     get 'top' => 'homes#top', as: 'top'
     resources :end_users, only: [:index, :show, :edit, :update]
     resources :mahjong_hands, only: [:new, :index, :show, :edit, :create, :update]
-    resources :genres, only: [:index, :edit. :create, :update]
+    resources :genres, only: [:index, :edit, :create, :update]
   end
   
   #ゲストログイン
