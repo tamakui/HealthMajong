@@ -1,6 +1,6 @@
 <h1>役詳細</h1>
 
-<%= image_tag @mahjong_hand.get_image, class: "img-fluid" %>
+<%= image_tag @mahjong_hand.image, size: '500x200' %>
 <table>
   <tbody>
     <tr>
@@ -17,4 +17,4 @@
     </tr>
   </tbody>
 </table>
-<% link_to "編集する", edit_admin_mahjong_hand_path(@mahjong_hand.id), class: 'btn btn-success' %>
+<%= link_to "編集する", edit_admin_mahjong_hand_path(@mahjong_hand.id), class: 'btn btn-success' %>

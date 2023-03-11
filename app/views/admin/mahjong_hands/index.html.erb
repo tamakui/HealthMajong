@@ -1,6 +1,6 @@
 <h1>役一覧</h1>
 <%= link_to new_admin_mahjong_hand_path do %>
-  <button class="btn-success rounded-circle" >+</button>
+  <button class="btn-success rounded-circle">+</button>
 <% end %>
 <table>
   <thead>
@@ -15,5 +15,6 @@
         <td><%= link_to mahjong_hand.name, admin_mahjong_hand_path(mahjong_hand.id) %></td>
         <td></td>
       </tr>
+    <% end %>
   </tbody>
 </table>
