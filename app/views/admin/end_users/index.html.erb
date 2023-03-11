@@ -8,7 +8,7 @@
         <thead class="table-active">
           <tr>
             <th>会員ID</th>
-            <th>氏名</th>
+            <th>ログイン名</th>
             <th>メールアドレス</th>
             <th>会員ステータス</th>
           </tr>
@@ -17,7 +17,7 @@
           <% @end_users.each do |end_user| %>
           <tr>
             <td><%= end_user.id %></td>
-            <td><%= link_to end_user.last_name+end_user.first_name, admin_end_user_path(end_user), class: "text-dark font-weight-bold" %></td>
+            <td><%= link_to end_user.login_name, admin_end_user_path(end_user), class: "text-dark font-weight-bold" %></td>
             <td><%= end_user.email %></td>
             <% if end_user.is_deleted == false %>
               <td class="text-success font-weight-bold">有効</td>

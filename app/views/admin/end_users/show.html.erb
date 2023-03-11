@@ -5,39 +5,39 @@
         <table>
           <tbody>
             <tr>
-              <th>会員ID</th>
-              <th><%= @end_user_id %></th>
+              <td>会員ID</td>
+              <td><%= @end_user_id %></td>
             </tr>
             <tr>
-              <th>氏名</th>
-              <th><%= @end_user.last_name %><%= @end_user.first_name %></th>
+              <td>氏名</td>
+              <td><%= @end_user.last_name %><%= @end_user.first_name %></td>
             </tr>
             <tr>
-              <th>フリガナ</th>
-              <th><%= @end_user.last_name_kana %><%= @end_user.first_name_kana %></th>
+              <td>フリガナ</td>
+              <td><%= @end_user.last_name_kana %><%= @end_user.first_name_kana %></td>
             </tr>
             <tr>
-              <th>ログイン名</th>
-              <th><%= @end_user.login_name %></th>
+              <td>ログイン名</td>
+              <td><%= @end_user.login_name %></td>
             </tr>
             <tr>
-              <th>メールアドレス</th>
-              <th><%= @end_user.email %></th>
+              <td>メールアドレス</td>
+              <td><%= @end_user.email %></td>
             </tr>
             <tr>
-              <th>会員ステータス</th>
-              <th>
-                <% if @customer.is_deleted == false %>
-                  <strong class="text-success">有効></strong>
+              <td>会員ステータス</td>
+              <td>
+                <% if @end_user.is_deleted == false %>
+                  <strong class="text-success">有効</strong>
                 <% else %>
                   <strong class="text-muted">退会</strong>
                 <% end %>
-              </th>
+              </td>
             </tr>
           </tbody>
         </table>
         <%= link_to "編集する", edit_admin_end_user_path, class:"btn btn-success ml-4" %>
-        <%= link_to "コメント一覧を見る", admin_top_path, class: "btn btn-primary ml-4" %>
+        <%= link_to "コメント一覧を見る", admin_top_path, class:"btn btn-primary ml-4" %>
       </div>
   </div>
 </div>
