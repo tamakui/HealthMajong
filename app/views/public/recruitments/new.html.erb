@@ -1,2 +1,8 @@
-<h1>Public::Recruitments#new</h1>
-<p>Find me in app/views/public/recruitments/new.html.erb</p>
+<h1>コメント</h1>
+<%= form_with model: @recruitment do |f| %>
+<p>タイトル</p>
+<%= f.text_field :title %>
+<p>コメント</p>
+<%= f.text_area :comment, placeholder: "麻雀アプリ名、部屋番、募集中" %>
+<%= f.submit '投稿' %>
+<% end %>
