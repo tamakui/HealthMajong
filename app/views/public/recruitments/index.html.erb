@@ -9,5 +9,6 @@
     <%= recruitment.end_user.login_name %>
   <p>コメント詳細</p>
   <%= link_to "コメント詳細", recruitment_path(recruitment.id) %>
+  <%#= link_to "#{recruitment.reply.count}コメント",recruitment_path(reply.id) %>
 </div>
 <% end %>

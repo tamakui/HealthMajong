@@ -6,13 +6,14 @@
         <thead>
           <tr><%#= image_tag @end_user.get_profile_image, size:'100x100' %></tr>
           <tr>
-            <th>ログイン後表示名</th>
+            <th>ログイン名</th>
             <th><%= @end_user.login_name %></th>
           </tr>
           <tr>
             <th>自己紹介</th>
             <th><%= @end_user.introduction %></th>
           </tr>
+          <%#= link_to "#{recruitment.reply.count}コメント",recruitment_path(reply.id) %>
         </thead>
       </table>
     </div>

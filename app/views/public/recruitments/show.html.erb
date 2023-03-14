@@ -10,21 +10,24 @@
     <%= @recruitment.created_at.strftime('%Y/%m/%d') %>
   <% if@recruitment.end_user == current_end_user %>
     <%= link_to '編集', edit_recruitment_path(@recruitment) %>
-    <%= link_to '削除', recruitment_path(@recruitment), method: :delete, data: { confirm: '本当に消しますか？' } %>
+    <%= button_to '削除', recruitment_path(@recruitment), method: :delete, data: { confirm: '本当に消しますか？' } %>
   <% end %>
 </div>
 
 <div>
-  <p>コメント件数：<%#= @recruitment.replies.count %></p>
-  <%# @recruitment.replies.each do |reply| %>
-    <p><%#= image_tag reply.end_user.get_profile_image(100,100) %></p>
-    <%#= reply.end_user.login_name %>
-    <%#= reply.created_at.strftime('%Y/%m/%d') %><%#= reply.comment %>
-  <%# end %>
+  <p>コメント件数：<%= @recruitment.replies.count %></p>
+  <% @recruitment.replies.each do |reply| %>
+    <p><%= image_tag reply.end_user.get_profile_image(100,100) %></p>
+    <%= reply.end_user.login_name %>
+    <%= reply.created_at.strftime('%Y/%m/%d') %><%= reply.comment %>
+    <% if reply.end_user == current_end_user %>
+      <%= link_to "削除", recruitment_reply_path(reply.recruitment,reply),method: :delete %>
+    <% end %>
+  <% end %>
 </div>
 <div>
-  <%#= form_with model: [@recruitment, @reply] do |f| %>
-    <%#= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-    <%#= f.submit "送信する" %>
-  <%# end %>
+  <%= form_with model: [@recruitment, @reply] do |f| %>
+    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+    <%= f.submit "送信する" %>
+  <% end %>
 </div>
