@@ -1,2 +1,13 @@
-<h1>Public::Recruitments#index</h1>
-<p>Find me in app/views/public/recruitments/index.html.erb</p>
+<h1>コメント一覧</h1>
+<% @recruitments.each do |recruitment| %>
+<div>
+  <p>タイトル</p>
+    <%= recruitment.title %>
+  <p>コメント</p>
+    <%= recruitment.comment %>
+  <p>ユーザー名</p>
+    <%= recruitment.end_user.login_name %>
+  <p>コメント詳細</p>
+  <%= link_to @recruitments, recruitment_path(recruitment.id) %>
+</div>
+<% end %>

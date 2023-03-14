@@ -4,12 +4,15 @@ class Public::RecruitmentsController < ApplicationController
   end
 
   def index
+    @recruitments = Recruitment.all
   end
 
   def show
+    @recruitment = Recruitment.find(params[:id])
   end
 
   def edit
+    @recruitment = Recruitment.find(params[:id])
   end
   
   def create
@@ -19,7 +22,18 @@ class Public::RecruitmentsController < ApplicationController
     redirect_to recruitments_path
   end
   
+  def update
+    if @recruitment.update(recruitment_params)
+      redirect_to recruitment_path(@recruitment.id)
+    else
+      render 'edit'
+    end
+  end
+  
   def destroy
+    @recruitment = Recruitment.find(params[:id])
+    @recruitment.destroy
+    redirect_to recruitments_path
   end
   
   private

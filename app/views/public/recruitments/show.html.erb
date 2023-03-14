@@ -1,2 +1,15 @@
-<h1>Public::Recruitments#show</h1>
-<p>Find me in app/views/public/recruitments/show.html.erb</p>
+<h1>コメント詳細</h1>
+<div>
+  <p>タイトル</p>
+    <%= @recruitment.title %>
+  <p>コメント</p>
+    <%= @recruitment.comment %>
+  <p>ユーザー名</p>
+    <%= @recruitment.end_user.login_name %>
+  <p>投稿日</p>
+    <%= @recruitment.created_at.strftime('%Y/%m/%d') %>
+  <% if@recruitment.end_user == current_end_user %>
+    <%= link_to '編集', edit_recruitment_path(@recruitment) %>
+    <%= link_to '削除', recruitment_path(@recruitment), method: :delete, data: { confirm: '本当に消しますか？' } %>
+  <% end %>
+</div>
