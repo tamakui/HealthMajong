@@ -5,7 +5,9 @@ class EndUser < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :profile_image
   
-  validates :login_name, presence: true, length: { maximum: 20 }
+  has_many :recruitments, dependent: :destroy
+  has_many :replies, dependent: :destroy
+  has_one_attached :profile_image
   
   def active_for_authentication?
     super && (is_deleted == false)

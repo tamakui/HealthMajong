@@ -1,10 +1,10 @@
 <h1>編集画面</h1>
 
-<%= form_with model: @recruitment do |f| %>
+<%= form_with model: @recruitment, local: true do |f| %>
   <h4>タイトル</h4>
     <%= f.text_field :title %>
   <h4>本文</h4>
-    <%= f.text_area :body %>
+    <%= f.text_area :comment %>
     <%= f.submit '保存' %>
 <% end %>
 <%= link_to 'コメント詳細', recruitment_path, class: "back" %>

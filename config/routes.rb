@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     patch '/end_users/withdraw' => 'end_users#withdraw'
     resources :scorings, only: [:index, :show]
     resources :mahjong_hands, only: [:index, :show]
-    resources :recruitments, only: [:new, :index, :show, :edit, :create, :destroy]
+    resources :recruitments #do
+      #resources :replies,only: [:create]
+    #end
   end
   
   #管理者

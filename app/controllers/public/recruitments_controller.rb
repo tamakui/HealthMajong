@@ -9,6 +9,7 @@ class Public::RecruitmentsController < ApplicationController
 
   def show
     @recruitment = Recruitment.find(params[:id])
+    @reply = Reply.new
   end
 
   def edit
@@ -23,6 +24,7 @@ class Public::RecruitmentsController < ApplicationController
   end
   
   def update
+    @recruitment = Recruitment.find(params[:id])
     if @recruitment.update(recruitment_params)
       redirect_to recruitment_path(@recruitment.id)
     else
