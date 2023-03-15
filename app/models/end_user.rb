@@ -7,7 +7,7 @@ class EndUser < ApplicationRecord
   
   has_many :recruitments, dependent: :destroy
   has_many :replies, dependent: :destroy
-  has_one_attached :profile_image
+  has_many :favorites, dependent: :destroy
   
   def active_for_authentication?
     super && (is_deleted == false)

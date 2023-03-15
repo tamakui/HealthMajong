@@ -18,12 +18,17 @@
             <%= f.text_field :login_name, autofocus: true %>
         </div>
         <div class='field'>
-          <h1>メールアドレス</h1>
-            <%= f.email_field :email, autofocus: true %>
+          <h1>自己紹介文</h1>
+            <%= f.text_field :introduction, autofocus: true %>
         </div>
         <%= f.submit "編集内容を保存", class: "btn btn-success" %>
         <%= link_to '退会する', end_users_unsubscribe_path, class: "btn btn-secondary" %>
       <% end %>
     </div>
   </div>
+</div>
+
+<div class ='mail_password'>
+  <p>メールアドレス、パスワードの変更をしたい方は</p><br>
+  <p><%= link_to 'こちら', edit_end_user_registration_path %>から</p>
 </div>

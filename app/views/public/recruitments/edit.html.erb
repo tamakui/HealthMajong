@@ -8,3 +8,4 @@
     <%= f.submit '保存' %>
 <% end %>
 <%= link_to 'コメント詳細', recruitment_path, class: "back" %>
+<%= button_to '削除', recruitment_path(@recruitment), method: :delete, data: { confirm: '本当に消しますか？' } %>

@@ -25,6 +25,9 @@
     <% end %>
   <% end %>
 </div>
+
+<%#= render "favorites/btn", recruitment: @recruitment %>
+
 <div>
   <%= form_with model: [@recruitment, @reply] do |f| %>
     <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
