@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   #ユーザー
   # URL /end_users/sign_in ...
   devise_for :end_users, skip: [:passwords], controllers: {
-  registrations: "public/registrations",
-  sessions: 'public/sessions'
-}
+    registrations: "public/registrations",
+    sessions: 'public/sessions'
+  }
 
   scope module: :public do
     root to: 'homes#top'
@@ -16,14 +16,17 @@ Rails.application.routes.draw do
     patch '/end_users/withdraw' => 'end_users#withdraw'
     resources :scorings, only: [:index, :show]
     resources :mahjong_hands, only: [:index, :show]
-    resources :recruitments, only: [:new, :index, :show, :edit, :create, :destroy]
+    resources :recruitments do
+      resource :favorites,only: [:create, :destroy]
+      resources :replies,only: [:create, :destroy]
+    end
   end
   
   #管理者
   # URL /admin/sign_in ...
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
-  sessions: "admin/sessions"
-}
+    sessions: "admin/sessions"
+  }
   
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'

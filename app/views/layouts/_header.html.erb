@@ -1,4 +1,4 @@
-<header class="bg-success text-monospace">
+<header>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #769164;">
     <div class="container">
       <a class="navbar-brand" href="/"><span>HealthMahjong</span></a>
@@ -25,6 +25,12 @@
           <% elsif end_user_signed_in? %>
             <li>
               <%= link_to "マイページ", end_users_my_page_path, class: "nav-link text-light" %>
+            </li>
+            <li>
+              <%= link_to "コメント投稿", new_recruitment_path, class: "nav-link text-light" %>
+            </li>
+            <li>
+              <%= link_to "コメント一覧", recruitments_path, class: "nav-link text-light" %>
             </li>
             <li>
               <%= link_to "役一覧", mahjong_hands_path, class: 'nav-link text-light' %>
