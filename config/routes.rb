@@ -35,7 +35,9 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :edit, :create, :update]
   end
   
-  #ゲストログイン
-  post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
+  #ゲストユーザーログイン
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

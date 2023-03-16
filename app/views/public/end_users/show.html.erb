@@ -19,4 +19,8 @@
     </div>
   </div>
 </div>
-<%= link_to "編集する", end_users_information_edit_path %>
+<% if end_user.name! = "guestuser" %>
+  <p>ゲストユーザーはユーザー情報の編集画できません。</p>
+<% else %>
+  <%= link_to "編集する", end_users_information_edit_path %>
+<% end %>
