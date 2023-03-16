@@ -21,7 +21,7 @@
     <%= reply.end_user.login_name %>
     <%= reply.created_at.strftime('%Y/%m/%d') %><%= reply.comment %>
     <% if reply.end_user == current_end_user %>
-      <%= link_to "削除", recruitment_reply_path(reply.recruitment,reply),method: :delete %>
+      <%= button_to "削除", recruitment_reply_path(reply.recruitment.id,reply.id),method: :delete %>
     <% end %>
   <% end %>
 </div>
