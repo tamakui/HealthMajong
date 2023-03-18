@@ -44,16 +44,19 @@
           <% else %>
           <!--ログイン前のヘッダー-->
             <li>
-              <%= link_to "Top", root_path,class: 'nav-link text-light' %>
+              <%= link_to "Top", root_path, class: 'nav-link text-light' %>
             </li>
             <li>
-              <%= link_to "About", about_path,class: 'nav-link text-light' %>
+              <%= link_to "About", about_path, class: 'nav-link text-light' %>
             </li>
             <li>
-              <%= link_to "新規登録", new_end_user_registration_path,class: 'nav-link text-light' %>
+              <%= link_to "新規登録", new_end_user_registration_path, class: 'nav-link text-light' %>
             </li>
             <li>
-              <%= link_to "ログイン", new_end_user_session_path ,class: 'nav-link text-light' %>
+              <%= link_to "ログイン", new_end_user_session_path, class: 'nav-link text-light' %>
+            </li>
+            <li>
+              <%= link_to "ゲストログイン", end_users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block mb-3 sign_in", method: :post %>
             </li>
           <% end %>
         </ul>

@@ -22,6 +22,12 @@ class Public::SessionsController < Devise::SessionsController
     root_path
   end
   
+  def guest_sign_in
+    end_user = EndUser.guest
+    sign_in end_user
+    redirect_to root_path, notice: 'ゲストユーザーでログインしました。'
+  end
+  
   protected
   # 退会しているかを判断するメソッド
   def end_user_state
