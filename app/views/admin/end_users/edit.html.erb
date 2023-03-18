@@ -22,7 +22,7 @@
     </div>
   </div>
   <div>
-    <% form_with model: @end_user, url: admin_end_user_path, local: true do |f| %>
+    <%= form_with model: @end_user, url: admin_end_user_path, local: true do |f| %>
       <div>
         <%= f.label :"氏名" %>
         <%= f.text_field :last_name, autofocus: true %>
