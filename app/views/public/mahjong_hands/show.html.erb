@@ -1,2 +1,17 @@
-<h1>Public::MahjongHands#show</h1>
-<p>Find me in app/views/public/mahjong_hands/show.html.erb</p>
+<%= image_tag @mahjong_hand.image, size: '500x200' %>
+<table>
+  <tbody>
+    <tr>
+      <td>役名</td>
+      <td><%= @mahjong_hand.name %></td>
+    </tr>
+    <tr>
+      <td>役説明</td>
+      <td><%= @mahjong_hand.describe %></td>
+    </tr>
+    <tr>
+      <td>ジャンル</td>
+      <td><%= @mahjong_hand %></td>
+    </tr>
+  </tbody>
+</table>

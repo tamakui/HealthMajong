@@ -1,2 +1,26 @@
-<h1>Public::EndUsers#show</h1>
-<p>Find me in app/views/public/end_users/show.html.erb</p>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h3>マイページ</h3>
+      <table class='table'>
+        <thead>
+          <tr>プロフィール画像</tr>
+          <tr><%= image_tag @end_user.get_profile_image(100, 100), size:'100x100' %></tr>
+          <tr>
+            <th>ログイン名</th>
+            <th><%= @end_user.login_name %></th>
+          </tr>
+          <tr>
+            <th>自己紹介</th>
+            <th><%= @end_user.introduction %></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+<% if end_user.name! = "guestuser" %>
+  <p>ゲストユーザーはユーザー情報の編集画できません。</p>
+<% else %>
+  <%= link_to "編集する", end_users_information_edit_path %>
+<% end %>
