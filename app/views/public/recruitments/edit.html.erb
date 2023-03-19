@@ -1,2 +1,11 @@
-<h1>Public::Recruitments#edit</h1>
-<p>Find me in app/views/public/recruitments/edit.html.erb</p>
+<h1>編集画面</h1>
+
+<%= form_with model: @recruitment, local: true do |f| %>
+  <h4>タイトル</h4>
+    <%= f.text_field :title %>
+  <h4>本文</h4>
+    <%= f.text_area :comment %>
+    <%= f.submit '保存' %>
+<% end %>
+<%= link_to 'コメント詳細', recruitment_path, class: "back" %>
+<%= button_to '削除', recruitment_path(@recruitment), method: :delete, data: { confirm: '本当に消しますか？' } %>
