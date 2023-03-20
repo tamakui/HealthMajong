@@ -22,7 +22,6 @@ test:
 
 production:
   <<: *default
-  #database: db/production.sqlite3 元々あったコメントアウトし以下追加する
   database: <%= ENV['DB_DATABASE'] %>
   adapter: mysql2
   encoding: utf8mb4

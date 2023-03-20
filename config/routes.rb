@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get 'about' => 'homes#about', as: 'about'
-    get '/end_users/information/edit' => 'end_users#edit'
+    get '/end_users/:id/information/edit' => 'end_users#edit', as: 'end_users_information_edit'
     patch '/end_users/information' => 'end_users#update'
     get '/end_users/my_page' => 'end_users#show'
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
