@@ -1,6 +1,6 @@
 <h1>役詳細</h1>
 
-<%= image_tag @mahjong_hand.image, size: '500x200' %>
+<%= image_tag @mahjong_hand.get_image(500, 200), size: '500x200' %>
 <table>
   <tbody>
     <tr>
@@ -18,4 +18,4 @@
   </tbody>
 </table>
 <%= link_to "編集する", edit_admin_mahjong_hand_path(@mahjong_hand.id), class: 'btn btn-success' %>
-<%= link_to "削除する", admin_mahjong_hands_path(@mahjong_hand.id), class: 'btn btn-success' %>
+<%= link_to "削除する", admin_mahjong_hand_path(@mahjong_hand.id), method: :delete, class: 'btn btn-success' %>

@@ -11,7 +11,11 @@
   </head>
 
   <body>
-    <body style="background-color:#AFC87D;">
+    <% if end_user_signed_in? %>
+      <body style="background-color:red;">
+    <% elsif admin_signed_in? %>
+      <body style="background-color:#AFC87D;">
+    <% end %>
     <%= render 'layouts/header' %>
     <%= yield %>
     <%= render 'layouts/footer' %>

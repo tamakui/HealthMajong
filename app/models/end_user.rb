@@ -32,11 +32,11 @@ class EndUser < ApplicationRecord
   #検索方法分岐
   def self.looks(search, word)
     if search == "perfect_match"
-      @end_user = EndUser.where("login_name LIKE?", "#{word}")
+      @end_users = EndUser.where("login_name LIKE?", "#{word}")
     elsif search == "partial_match"
-      @end_user = EndUser.where("login_name LIKE?", "#{word}")
+      @end_users = EndUser.where("login_name LIKE?", "%#{word}%")
     else
-      @end_user = EndUser.all
+      @end_users = EndUser.all
     end
   end
 

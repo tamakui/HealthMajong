@@ -18,7 +18,7 @@
           <tbody>
               <tr>
                 <th scope="row"><%= @recruitment.end_user.id %></th>
-                <td><%= link_to @recruitment.end_user.login_name, admin_show_path %></td>
+                <td><%= @recruitment.end_user.login_name %></td>
                 <td><%= @recruitment.title %></td>
                 <td><%= @recruitment.comment %></td>
                 <td><%= @recruitment.end_user.email %></td>
@@ -29,6 +29,7 @@
                 <% end %>  
               </tr>
           </tbody>
+          <%= link_to "削除", admin_home_path(@recruitment), method: :delete %>
         </table>
     </div>
   </div>

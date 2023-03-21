@@ -6,11 +6,11 @@
     <tbody>
       <% @end_users.each do |end_user| %>
         <tr>
-          <td><%= end_user.name %></td>
+          <td><%= end_user.login_name %></td>
         </tr>
       <% end %>
     </tbody>
-  <% elsif %>
+  <% elsif @range == "MahjongHand" %>
   <!--検索対象モデルがMahjongHandのとき-->
     <tbody>
       <% @mahjong_hands.each do |mahjong_hand| %>

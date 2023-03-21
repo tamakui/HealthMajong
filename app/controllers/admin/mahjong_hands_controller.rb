@@ -33,8 +33,8 @@ class Admin::MahjongHandsController < ApplicationController
   
   def destroy
     @mahjong_hand = MahjongHand.find(params[:id])
-    @mahjong_hand.destroy(mahjong_hand_params)
-    redirect_to admin_mahjong_hand_path
+    @mahjong_hand.destroy
+    redirect_to admin_mahjong_hands_path
   end
     
   
