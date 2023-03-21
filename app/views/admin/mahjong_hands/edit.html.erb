@@ -6,7 +6,7 @@
     <%= f.file_field :image, accept:"image/*" %>
   </div>
   <div>
-    <%= f.label :"現在設定している役の画像"
+    <%= f.label :"現在設定している役の画像" %>
     <%= image_tag @mahjong_hand.get_image(500, 200), size: '500x200' %>
   </div>
   <div class="form-group">
