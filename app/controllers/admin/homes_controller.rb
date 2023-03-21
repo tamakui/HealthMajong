@@ -4,6 +4,8 @@ class Admin::HomesController < ApplicationController
   end
   
   def show
-    #@recruitment = Recruitment.find(params[:id])
+    @recruitment = Recruitment.find(params[:recruitment_id])
   end
+  
+  private
 end

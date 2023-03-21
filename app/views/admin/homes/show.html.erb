@@ -3,5 +3,33 @@
     <div class="col-sm-8 px-sm-0 offset-sm-1">
       <h1>コメント詳細</h1>
     </div>
+    <div class="col-sm-10 px-sm-0 mx-auto mb-5">
+        <table class="table table">
+          <thead class="table-active">
+            <tr>
+              <th scope="col">会員ID</th>
+              <th scope="col">ログイン名</th>
+              <th scope="col">タイトル</th>
+              <th scope="col">コメント</th>
+              <th scope="col">メールアドレス</th>
+              <th scope="col">会員ステータス</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <th scope="row"><%= @recruitment.end_user.id %></th>
+                <td><%= link_to @recruitment.end_user.login_name, admin_show_path %></td>
+                <td><%= @recruitment.title %></td>
+                <td><%= @recruitment.comment %></td>
+                <td><%= @recruitment.end_user.email %></td>
+                <%if @recruitment.end_user.is_deleted == false %>
+                  <td class="text-success">有効</td>
+                <% else %>
+                  <td class="text-muted">退会</td>
+                <% end %>  
+              </tr>
+          </tbody>
+        </table>
+    </div>
   </div>
 </div>

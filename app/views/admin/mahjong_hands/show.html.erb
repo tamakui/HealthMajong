@@ -13,8 +13,9 @@
     </tr>
     <tr>
       <td>ジャンル</td>
-      <td><%= @mahjong_hand %></td>
+      <td><%= @mahjong_hand.genre.name %></td>
     </tr>
   </tbody>
 </table>
 <%= link_to "編集する", edit_admin_mahjong_hand_path(@mahjong_hand.id), class: 'btn btn-success' %>
+<%= link_to "削除する", admin_mahjong_hands_path(@mahjong_hand.id), class: 'btn btn-success' %>

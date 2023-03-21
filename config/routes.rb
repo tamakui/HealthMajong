@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resource :favorites,only: [:create, :destroy]
       resources :replies,only: [:create, :destroy]
     end
+    get "search" => "searches#search"
   end
   
   #管理者
@@ -33,7 +34,7 @@ Rails.application.routes.draw do
     get 'show' => 'homes#show'
     resources :homes, only: [:show, :destroy]
     resources :end_users, only: [:index, :show, :edit, :update]
-    resources :mahjong_hands, only: [:new, :index, :show, :edit, :create, :update]
+    resources :mahjong_hands, only: [:new, :index, :show, :edit, :create, :update, :destroy]
     resources :genres, only: [:index, :edit, :create, :update]
   end
   
