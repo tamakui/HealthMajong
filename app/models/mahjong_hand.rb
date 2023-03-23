@@ -21,4 +21,7 @@ class MahjongHand < ApplicationRecord
       @mahjong_hands = MahjongHand.all
     end
   end
+  
+  validates :name, presence: true
+  validates :describe, presence: true
 end

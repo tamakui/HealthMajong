@@ -7,4 +7,7 @@ class Recruitment < ApplicationRecord
   def favorited_by?(end_user)
     favorites.exists?(end_user: end_user.id)
   end
+  
+  validates :title, presence: true
+  validates :comment, presence: true
 end

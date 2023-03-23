@@ -9,4 +9,6 @@ class Genre < ApplicationRecord
       @genres = Genre.all
     end
   end
+
+  validates :name, presence: true
 end
