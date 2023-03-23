@@ -14,11 +14,11 @@ class MahjongHand < ApplicationRecord
   #検索方法分岐
   def self.looks(search, word)
     if search == "perfect_match"
-      @mahjong_hand = MahjongHand.where("name LIKE?", "#{word}")
+      @mahjong_hands = MahjongHand.where("name LIKE?", "#{word}")
     elsif search == "partial_match"
-      @mahjong_hand = MahjongHand.where("name LIKE?", "#{word}")
+      @mahjong_hands = MahjongHand.where("name LIKE?", "%#{word}%")
     else
-      @mahjong_hand = MahjongHand.all
+      @mahjong_hands = MahjongHand.all
     end
   end
 end

@@ -9,6 +9,7 @@ class EndUser < ApplicationRecord
   has_many :replies, dependent: :destroy
   has_many :favorites, dependent: :destroy
   
+  #退会済みのユーザーが同じアカウントでログインできない
   def active_for_authentication?
     super && (is_deleted == false)
   end

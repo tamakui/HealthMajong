@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about', as: 'about'
     get '/end_users/:id/information/edit' => 'end_users#edit', as: 'end_users_information_edit'
     patch '/end_users/information' => 'end_users#update'
-    get '/end_users/:id' => 'end_users#show'
+    get '/end_users/my_page' => 'end_users#show'
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
     patch '/end_users/withdraw' => 'end_users#withdraw'
     resources :scorings, only: [:index, :show]
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     resources :homes, only: [:show, :destroy]
     resources :end_users, only: [:index, :show, :edit, :update]
     resources :mahjong_hands, only: [:new, :index, :show, :edit, :create, :update, :destroy]
-    resources :genres, only: [:index, :edit, :create, :update]
+    resources :genres, only: [:index, :edit, :create, :update, :destroy]
   end
   
   #ゲストユーザーログイン
