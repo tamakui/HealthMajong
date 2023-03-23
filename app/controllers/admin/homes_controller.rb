@@ -8,15 +8,9 @@ class Admin::HomesController < ApplicationController
   end
   
   def destroy
-    @recruitment = Recruitment.find(params[:recruitment_id])
+    @recruitment = Recruitment.find(params[:id])
     @recruitment.destroy
-    redirect_to admin_home_path(@recruitment)
-  end
-    
-  private
-  
-  def recruitment_params
-    params.require(:recruitment).permit(:title, :comment, :end_user_id)
+    redirect_to admin_top_path
   end
   
 end

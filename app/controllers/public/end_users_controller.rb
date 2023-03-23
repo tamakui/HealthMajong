@@ -2,6 +2,10 @@ class Public::EndUsersController < ApplicationController
   before_action :authenticate_end_user!
   before_action :ensure_guest_user, only: [:edit]
   
+  def index
+    @end_users = EndUser.all
+  end
+  
   def show
     @end_user = EndUser.find(current_end_user.id)
   end
@@ -43,5 +47,4 @@ class Public::EndUsersController < ApplicationController
     end
   end  
 
-  
 end

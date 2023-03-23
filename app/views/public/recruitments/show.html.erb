@@ -13,6 +13,7 @@
     <%= button_to '削除', recruitment_path(@recruitment), method: :delete, data: { confirm: '本当に消しますか？' } %>
   <% end %>
 </div>
+<%= render "public/favorites/btn", recruitment: @recruitment %>
 
 <div>
   <p>コメント件数：<%= @recruitment.replies.count %></p>
@@ -26,7 +27,6 @@
   <% end %>
 </div>
 
-<%= render "public/favorites/btn", recruitment: @recruitment %>
 
 <div>
   <%= form_with model: [@recruitment, @reply] do |f| %>

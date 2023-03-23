@@ -30,6 +30,7 @@ class Admin::GenresController < ApplicationController
   def destroy
     @genre = Genre.find(params[:id])
     @genre.destroy
+    @genres = Genre.all
     render 'index'
   end
   

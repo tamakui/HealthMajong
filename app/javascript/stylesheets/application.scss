@@ -1,6 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
-.test-css {
-    background-color: red;
+.container-card {
+  width: 90;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin-bottom: 10px;
 }
