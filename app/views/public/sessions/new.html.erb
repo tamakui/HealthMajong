@@ -1,10 +1,10 @@
-<div class='container px-5 px-sm-0'>
+<div class='container'>
   <div class='row'>
-    <div class='col-md-3'>
-      <h2>ログイン</h2>
-      <p>会員の方はこちらからログイン</p>
+    <div class='col-10 mx-auto'>
+      <h2 class="my-5">ログイン</h2>
+      <p class="mb-4">会員の方はこちらからログイン</p>
     </div>
-    <div class='col-md-5'>
+    <div class='col-12'>
       <body class='text-center'>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
@@ -28,8 +28,10 @@
             <%= f.submit "ログイン", class: "btn btn-success" %>
           </div>
         <% end %>
-  
-        <%= render "public/shared/links" %>
+        
+        <p class="mt-5">まだ会員登録がお済みでない方は</p>
+        <p><%= link_to "こちら", new_end_user_registration_path %>から新規登録してください</p>
+        
       </body>
     </div>
   </div>
