@@ -1,21 +1,27 @@
-<h1>役詳細</h1>
-
-<%= image_tag @mahjong_hand.get_image(500, 200), size: '500x200' %>
-<table>
-  <tbody>
-    <tr>
-      <td>役名</td>
-      <td><%= @mahjong_hand.name %></td>
-    </tr>
-    <tr>
-      <td>役説明</td>
-      <td><%= @mahjong_hand.describe %></td>
-    </tr>
-    <tr>
-      <td>ジャンル</td>
-      <td><%= @mahjong_hand.genre.name %></td>
-    </tr>
-  </tbody>
-</table>
-<%= link_to "編集する", edit_admin_mahjong_hand_path(@mahjong_hand.id), class: 'btn btn-success' %>
-<%= link_to "削除する", admin_mahjong_hand_path(@mahjong_hand.id), method: :delete, class: 'btn btn-danger' %>
+<div class='container'> 
+  <div class='row'>
+    <div class='col'>
+      <h1>役詳細</h1>
+      
+      <%= image_tag @mahjong_hand.get_image(500, 200), size: '500x200' %>
+      <table>
+        <tbody>
+          <tr>
+            <td>役名</td>
+            <td><%= @mahjong_hand.name %></td>
+          </tr>
+          <tr>
+            <td>役説明</td>
+            <td><%= @mahjong_hand.describe %></td>
+          </tr>
+          <tr>
+            <td>ジャンル</td>
+            <td><%= @mahjong_hand.genre.name %></td>
+          </tr>
+        </tbody>
+      </table>
+      <%= link_to "編集する", edit_admin_mahjong_hand_path(@mahjong_hand.id), class: 'btn btn-success' %>
+      <%= link_to "削除する", admin_mahjong_hand_path(@mahjong_hand.id), method: :delete, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>

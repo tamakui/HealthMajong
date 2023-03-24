@@ -1,28 +1,33 @@
-<h1>役編集</h1>
-
-<%= form_with model:@mahjong_hand, url: admin_mahjong_hands_path, method: :post, local:true do |f| %>
-  <div class="form-group">
-    <%= f.label :"新しく役の画像を投稿する際はこちらから" %>
-    <%= f.file_field :image, accept:"image/*" %>
+<div class='container'> 
+  <div class='row'>
+    <div class='col'>      
+      <h1>役編集</h1>
+      
+      <%= form_with model:@mahjong_hand, url: admin_mahjong_hands_path, method: :post, local:true do |f| %>
+        <div class="form-group">
+          <%= f.label :"新しく役の画像を投稿する際はこちらから" %>
+          <%= f.file_field :image, accept:"image/*" %>
+        </div>
+        <div>
+          <%= f.label :"現在設定している役の画像" %></br>
+          <%= image_tag @mahjong_hand.get_image(500, 200), size: '500x200' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :"役名" %>
+          <%= f.text_field :name, placeholder:"九蓮宝燈" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :"役説明" %>
+          <%= f.text_field :describe, placeholder:"「1112345678999+同種の数牌1枚」という形の清一色（チンイツ）を門前でアガると成立する役満です。" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :"ジャンル" %>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "変更を保存", class: 'btn btn-success' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <%= f.label :"現在設定している役の画像" %>
-    <%= image_tag @mahjong_hand.get_image(500, 200), size: '500x200' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :"役名" %>
-    <%= f.text_field :name, placeholder:"九蓮宝燈" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :"役説明" %>
-    <%= f.text_field :describe, placeholder:"「1112345678999+同種の数牌1枚」という形の清一色（チンイツ）を門前でアガると成立する役満です。" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :"ジャンル" %>
-    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
-  </div>
-  <div class="form-group">
-    <%= f.submit "変更を保存", class: 'btn btn-success' %>
-  </div>
-<% end %>
-  
+</div>

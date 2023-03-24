@@ -13,9 +13,11 @@
   <body>
     <%= render 'layouts/header' %>
     <% if end_user_signed_in? %>
-      <body style="background-color:red;">
+      <body style="background-color:#BAB454;">
     <% elsif admin_signed_in? %>
       <body style="background-color:#AFC87D;">
+    <% else %>
+      <body style="background-color:##D3E173;">
     <% end %>
   <main>
     <p id="notice"><%= notice %></p>
