@@ -1,6 +1,6 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-3'>
+    <div class='col-11'>
       <h3>マイページ</h3>
       <table class='table'>
         <thead>
@@ -16,11 +16,12 @@
           </tr>
         </thead>
       </table>
+      <% if @end_user.email == "test@test.com" %>
+        <p>ゲストユーザーはユーザー情報の編集画できません。</p>
+      <% else %>
+        <%= link_to "編集する", end_users_information_edit_path(@end_user) %>
+      <% end %>
     </div>
   </div>
 </div>
-<% if @end_user.email == "test@test.com" %>
-  <p>ゲストユーザーはユーザー情報の編集画できません。</p>
-<% else %>
-  <%= link_to "編集する", end_users_information_edit_path(@end_user) %>
-<% end %>
+
