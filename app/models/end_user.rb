@@ -3,11 +3,15 @@ class EndUser < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_one_attached :profile_image
   
+  has_one_attached :profile_image
   has_many :recruitments, dependent: :destroy
   has_many :replies, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  
+  validates :name, length: { minimum: 2, maximum: 20 }
+  validates :email, uniqueness: true
+  validates :introduction, length: { maximum: 100 }
   
   #退会済みのユーザーが同じアカウントでログインできない
   def active_for_authentication?

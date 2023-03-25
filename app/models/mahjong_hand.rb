@@ -22,6 +22,6 @@ class MahjongHand < ApplicationRecord
     end
   end
   
-  validates :name, presence: true
-  validates :describe, presence: true
+  validates :name,presence:true
+  validates :describe,presence:true
 end
