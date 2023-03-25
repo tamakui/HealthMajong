@@ -12,7 +12,7 @@
         <tbody>
           <% @mahjong_hands.each do |mahjong_hand| %>
             <tr>
-              <td><%= link_to mahjong_hand.name, admin_mahjong_hand_path(mahjong_hand.id) %></td>
+              <td><%= link_to mahjong_hand.name, mahjong_hands_path %></td>
               <td><%= mahjong_hand.genre.name %></td>
             </tr>
           <% end %>
