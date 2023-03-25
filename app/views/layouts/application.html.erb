@@ -9,20 +9,20 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
+  <% background_color = "" %>
+  <% if end_user_signed_in? %>
+    <% background_color = "#BAB454"%>
+  <% elsif admin_signed_in? %>
+    <% background_color = "#AFC87D"%>
+  <% else %>
+    <% background_color = "#D3E173"%>
+  <% end %>
+  <body style=<%="background-color:#{background_color};"%>>
     <%= render 'layouts/header' %>
-    <% if end_user_signed_in? %>
-      <body style="background-color:#BAB454;">
-    <% elsif admin_signed_in? %>
-      <body style="background-color:#AFC87D;">
-    <% else %>
-      <body style="background-color:##D3E173;">
-    <% end %>
-  <main>
-    <p id="notice"><%= notice %></p>
-    <%= yield %>
-  </main>
-    <%= render 'layouts/footer' %>
+    <main>
+      <p id="notice"><%= notice %></p>
+      <%= yield %>
+    </main>
+      <%= render 'layouts/footer' %>
   </body>
 </html>
