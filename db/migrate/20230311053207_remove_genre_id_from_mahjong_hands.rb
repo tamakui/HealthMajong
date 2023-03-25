@@ -1,5 +1,8 @@
 class RemoveGenreIdFromMahjongHands < ActiveRecord::Migration[6.1]
-  def change
-    remove_column :mahjong_hands, :'genre_id：integer', :string
+  def up
+    remove_column :mahjong_hands, :genre_id, :integer
   end
+  def down
+    add_column :mahjong_hands, :genre_id, :integer
+  end 
 end
