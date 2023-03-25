@@ -1,20 +1,23 @@
-<h1>役一覧</h1>
-<%= link_to new_admin_mahjong_hand_path do %>
-  <button class="btn-success rounded-circle">+</button>
-<% end %>
-<table>
-  <thead>
-    <tr>
-      <th>役名</th>
-      <th>ジャンル</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @mahjong_hands.each do |mahjong_hand| %>
-      <tr>
-        <td><%= link_to mahjong_hand.name, admin_mahjong_hand_path(mahjong_hand.id) %></td>
-        <td></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class='container'>
+  <div class='row'>
+    <div class='col-9 mx-auto text-center'>
+      <h1>役一覧</h1>
+      <table class="table table">
+        <thead>
+          <tr>
+            <th>役名</th>
+            <th>ジャンル</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @mahjong_hands.each do |mahjong_hand| %>
+            <tr>
+              <td><%= link_to mahjong_hand.name, admin_mahjong_hand_path(mahjong_hand.id) %></td>
+              <td><%= mahjong_hand.genre.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> 

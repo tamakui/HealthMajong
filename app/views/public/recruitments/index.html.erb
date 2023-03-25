@@ -1,13 +1,15 @@
-<h1>コメント一覧</h1>
-<% @recruitments.each do |recruitment| %>
-<div>
-  <p>タイトル</p>
-    <%= recruitment.title %>
-  <p>コメント</p>
-    <%= recruitment.comment %>
-  <p>ユーザー名</p>
-    <%= recruitment.end_user.login_name %>
-  <p>コメント詳細</p>
-  <%= link_to "コメント詳細", recruitment_path(recruitment.id) %>
-</div>
-<% end %>
+<div class='container'>
+  <div class='row'>
+    <div class='col-9 mx-auto text-center'>
+      <h1>コメント一覧</h1>
+      <% @recruitments.each do |recruitment| %>
+        <div>
+          <p>タイトル:<%= recruitment.title %></p>
+          <p>コメント:<%= recruitment.comment %></p>
+          <p>ユーザー名:<%= recruitment.end_user.login_name %></p>
+          <%= link_to "コメント詳細", recruitment_path(recruitment.id) %><br>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div> 

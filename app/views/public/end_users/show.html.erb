@@ -16,7 +16,7 @@
           </tr>
         </thead>
       </table>
-      <% if @end_user.email == "test@test.com" %>
+      <% if @end_user == EndUser.guest %>
         <p>ゲストユーザーはユーザー情報の編集画できません。</p>
       <% else %>
         <%= link_to "編集する", end_users_information_edit_path(@end_user) %>

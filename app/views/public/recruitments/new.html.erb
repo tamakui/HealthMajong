@@ -1,8 +1,14 @@
-<h1>コメント</h1>
-<%= form_with model: @recruitment do |f| %>
-<p>タイトル</p>
-<%= f.text_field :title, placeholder: "麻雀アプリ名" %>
-<p>コメント</p>
-<%= f.text_area :comment, placeholder: "部屋番、募集中" %>
-<%= f.submit '投稿' %>
-<% end %>
+<div class='container'>
+  <div class='row'>
+    <div class='col-9 mx-auto text-center'>
+      <h1 class="mt-5">コメント</h1>
+      <%= form_with model: @recruitment do |f| %>
+      <p>タイトル</p>
+      <%= f.text_field :title, placeholder: "麻雀アプリ名" %>
+      <p>コメント</p>
+      <%= f.text_area :comment, placeholder: "部屋番、募集中" %></br>
+      <%= f.submit '投稿' %>
+      <% end %>
+    </div>
+  </div>
+</div> 

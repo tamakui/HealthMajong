@@ -1,17 +1,23 @@
-<%= image_tag @mahjong_hand.get_image(500, 200), size: '500x200' %>
-<table>
-  <tbody>
-    <tr>
-      <td>役名</td>
-      <td><%= @mahjong_hand.name %></td>
-    </tr>
-    <tr>
-      <td>役説明</td>
-      <td><%= @mahjong_hand.describe %></td>
-    </tr>
-    <tr>
-      <td>ジャンル</td>
-      <td><%= @mahjong_hand %></td>
-    </tr>
-  </tbody>
-</table>
+<div class='container'>
+  <div class='row'>
+    <div class='col'>
+      <%= image_tag @mahjong_hand.get_image(500, 200), size: '500x200' %>
+      <table>
+        <tbody>
+          <tr>
+            <td>役名</td>
+            <td><%= @mahjong_hand.name %></td>
+          </tr>
+          <tr>
+            <td>役説明</td>
+            <td><%= @mahjong_hand.describe %></td>
+          </tr>
+          <tr>
+            <td>ジャンル</td>
+            <td><%= @mahjong_hand %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> 
