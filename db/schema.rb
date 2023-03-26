@@ -79,23 +79,23 @@ ActiveRecord::Schema.define(version: 2023_03_12_152810) do
   end
 
   create_table "genres", force: :cascade do |t|
-    t.string "name", default: "", null: false
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "mahjong_hands", force: :cascade do |t|
-    t.string "name", default: "", null: false
-    t.text "describe", default: "", null: false
+    t.string "name", null: false
+    t.text "describe", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "genre_id"
+    t.integer "genre_id", null: false
   end
 
   create_table "recruitments", force: :cascade do |t|
     t.integer "end_user_id", null: false
-    t.string "title", default: "", null: false
-    t.text "comment", default: "", null: false
+    t.string "title", null: false
+    t.text "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2023_03_12_152810) do
   create_table "replies", force: :cascade do |t|
     t.integer "end_user_id", null: false
     t.integer "recruitment_id", null: false
-    t.text "comment", default: "", null: false
+    t.text "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
