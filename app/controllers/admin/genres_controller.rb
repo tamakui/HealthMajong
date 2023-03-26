@@ -31,7 +31,7 @@ class Admin::GenresController < ApplicationController
     @genre = Genre.find(params[:id])
     @genre.destroy
     @genres = Genre.all
-    render 'index'
+    redirect_to admin_genres_path
   end
   
   private

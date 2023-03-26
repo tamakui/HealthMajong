@@ -1,5 +1,5 @@
 <h1>検索結果</h1>
-
+<% unless params[:word] == "" && params[:search] == "perfect_match" %>
 <table class="table table-hover table-inverse">
   <!--検索対象モデルがEndUserのとき-->
   <% if @range == "EndUser" %>
@@ -30,6 +30,7 @@
     </tbody>
   <% end %>
 </table>
+<% end %>
 
 
 

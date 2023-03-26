@@ -9,7 +9,7 @@ class EndUser < ApplicationRecord
   has_many :replies, dependent: :destroy
   has_many :favorites, dependent: :destroy
   
-  validates :name, length: { minimum: 2, maximum: 20 }
+  validates :login_name, length: { minimum: 2, maximum: 20 }
   validates :email, uniqueness: true
   validates :introduction, length: { maximum: 100 }
   
