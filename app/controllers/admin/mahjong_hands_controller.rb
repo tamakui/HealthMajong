@@ -1,4 +1,6 @@
 class Admin::MahjongHandsController < ApplicationController
+  before_action :authenticate_admin!
+  
   def new
     @mahjong_hand = MahjongHand.new
   end
