@@ -19,8 +19,11 @@ class Public::RecruitmentsController < ApplicationController
   def create
     @recruitment = Recruitment.new(recruitment_params)
     @recruitment.end_user_id = current_end_user.id
-    @recruitment.save
-    redirect_to recruitments_path
+    if @recruitment.save
+      redirect_to recruitments_path
+    else
+      render 'new'
+    end
   end
   
   def update
