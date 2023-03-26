@@ -17,8 +17,10 @@ class Public::EndUsersController < ApplicationController
   def update
     @end_user = current_end_user
     if @end_user.update(end_user_params)
+      flash[:notice] = "編集が成功しました"
       redirect_to end_users_my_page_path
     else
+      flash[:notice] = "正しい入力をしてください"
       render 'edit'
     end
   end
@@ -31,6 +33,7 @@ class Public::EndUsersController < ApplicationController
     @end_user = current_end_user
     @end_user.update(is_deleted: true)
     reset_session
+    flash[:notice] = "退会が成功しました"
     redirect_to root_path
   end
   

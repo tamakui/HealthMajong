@@ -18,15 +18,22 @@ class Admin::MahjongHandsController < ApplicationController
   
   def create
     @mahjong_hand = MahjongHand.new(mahjong_hand_params)
-    @mahjong_hand.save
-    redirect_to admin_mahjong_hand_path(@mahjong_hand)
+    if @mahjong_hand.save
+      flash[:notice] = "投稿が成功しました"
+      redirect_to admin_mahjong_hand_path(@mahjong_hand)
+    else
+      flash[:notice] = "正しい入力をお願いします"
+      render "new"
+    end
   end
   
   def update
     @mahjong_hand = MahjongHand.find(params[:id])
     if @mahjong_hand.update(mahjong_hand_params)
+      flash[:notice] = "編集が成功しました"
       redirect_to admin_mahjong_hand_path(@mahjong_hand.id)
     else
+      flash[:notice] = "正しい入力をお願いします"
       render 'edit'
     end
   end
@@ -34,6 +41,7 @@ class Admin::MahjongHandsController < ApplicationController
   def destroy
     @mahjong_hand = MahjongHand.find(params[:id])
     @mahjong_hand.destroy
+    flash[:notice] = "削除が成功しました"
     redirect_to admin_mahjong_hands_path
   end
     

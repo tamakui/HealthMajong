@@ -20,8 +20,10 @@ class Public::RecruitmentsController < ApplicationController
     @recruitment = Recruitment.new(recruitment_params)
     @recruitment.end_user_id = current_end_user.id
     if @recruitment.save
+      flash[:notice] = "投稿が成功しました"
       redirect_to recruitments_path
     else
+      flash[:notice] = "正しい入力をお願いします"
       render 'new'
     end
   end
@@ -29,8 +31,10 @@ class Public::RecruitmentsController < ApplicationController
   def update
     @recruitment = Recruitment.find(params[:id])
     if @recruitment.update(recruitment_params)
+      flash[:notice] = "修正が成功しました"
       redirect_to recruitment_path(@recruitment.id)
     else
+      flash[:notice] = "正しい入力をお願いします"
       render 'edit'
     end
   end
@@ -38,6 +42,7 @@ class Public::RecruitmentsController < ApplicationController
   def destroy
     @recruitment = Recruitment.find(params[:id])
     @recruitment.destroy
+    flash[:notice] = "削除が成功しました"
     redirect_to recruitments_path
   end
   

@@ -10,6 +10,7 @@ class Admin::HomesController < ApplicationController
   def destroy
     @recruitment = Recruitment.find(params[:id])
     @recruitment.destroy
+    flash[:notice] = "削除が成功しました"
     redirect_to admin_top_path
   end
   
