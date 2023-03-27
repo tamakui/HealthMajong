@@ -11,10 +11,10 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about', as: 'about'
     get '/end_users/index' => 'end_users#index'
     get '/end_users/:id/information/edit' => 'end_users#edit', as: 'end_users_information_edit'
-    patch '/end_users/information' => 'end_users#update'
+    patch '/end_users/information/:id' => 'end_users#update', as: 'end_users_information_update'
     get '/end_users/my_page' => 'end_users#my_page'
-    get '/end_users/:id' => 'end_users#show', as: 'end_user'
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
+    get '/end_users/:id' => 'end_users#show', as: 'end_user'
     patch '/end_users/withdraw' => 'end_users#withdraw'
     resources :scorings, only: [:index, :show]
     resources :mahjong_hands, only: [:index, :show]
@@ -38,6 +38,8 @@ Rails.application.routes.draw do
     resources :end_users, only: [:index, :show, :edit, :update]
     resources :mahjong_hands, only: [:new, :index, :show, :edit, :create, :update, :destroy]
     resources :genres, only: [:index, :edit, :create, :update, :destroy]
+  
+    get '*path', to: 'homes#top'
   end
   
   #ゲストユーザーログイン

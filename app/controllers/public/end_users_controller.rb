@@ -1,6 +1,6 @@
 class Public::EndUsersController < ApplicationController
   before_action :authenticate_end_user!
-  before_action :ensure_guest_user, only: [:edit, :update, :unsubscribe, :withdraw]
+  before_action :ensure_guest_user, only: [:edit, :update]
   
   def index
     @end_users = EndUser.all
