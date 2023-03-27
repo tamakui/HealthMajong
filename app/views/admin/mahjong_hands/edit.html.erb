@@ -3,7 +3,7 @@
     <div class='col'>      
       <h1>役編集</h1>
       
-      <%= form_with model:@mahjong_hand, url: admin_mahjong_hands_path, method: :post, local:true do |f| %>
+      <%= form_with model:@mahjong_hand, url: admin_mahjong_hand_path(@mahjong_hand), method: :patch, local:true do |f| %>
         <div class="form-group">
           <%= f.label :"新しく役の画像を投稿する際はこちらから" %>
           <%= f.file_field :image, accept:"image/*" %>

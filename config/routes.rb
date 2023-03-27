@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     get '/end_users/index' => 'end_users#index'
     get '/end_users/:id/information/edit' => 'end_users#edit', as: 'end_users_information_edit'
     patch '/end_users/information' => 'end_users#update'
-    get '/end_users/my_page' => 'end_users#show'
+    get '/end_users/my_page' => 'end_users#my_page'
+    get '/end_users/:id' => 'end_users#show', as: 'end_user'
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
     patch '/end_users/withdraw' => 'end_users#withdraw'
     resources :scorings, only: [:index, :show]

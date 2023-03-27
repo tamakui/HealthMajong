@@ -16,8 +16,8 @@
           </tr>
         </thead>
       </table>
-      <% if @end_user == EndUser.guest %>
-        <p>ゲストユーザーはユーザー情報の編集画できません。</p>
+      <% if @end_user == EndUser.guest || @end_user !=  current_end_user %>
+        <p>ユーザー情報の編集ができません。</p>
       <% else %>
         <%= link_to "編集する", end_users_information_edit_path(@end_user) %>
       <% end %>

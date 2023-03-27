@@ -9,7 +9,7 @@
           <%= image_tag end_user.get_profile_image(100, 100), size:'100x100' %>
           <div class="card-body">
             <h5 class="card-login_name">ログイン名</h5>
-              <%= end_user.login_name %>
+              <%= link_to end_user.login_name,  end_user_path(end_user) %>
             <p class="card-introduction">自己紹介</p>
               <%= end_user.introduction %>
           </div>
