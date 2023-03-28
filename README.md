@@ -20,7 +20,12 @@
 ・初心者へ麻雀を教えるとき
 
 ## 設計書
-<...>
+・ER図
+  https://app.diagrams.net/#G1oDYPLrI4E5qxynCPa2PJKXdJn-PB-add
+・テーブル定義書
+  https://docs.google.com/spreadsheets/d/1QQinvZfZr2bkm0cKT0DqIcgFaUutocG9/edit#gid=1243549839
+・アプリケーション詳細設計書
+  https://docs.google.com/spreadsheets/d/1moiScXaEPGiDCrOJt5LwtePAv-YEleHitIbncGUzjUA/edit#gid=1482048837
 
 ## 開発環境
 - OS：Linux(CentOS)

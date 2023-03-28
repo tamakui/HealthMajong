@@ -16,14 +16,13 @@ Rails.application.routes.draw do
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
     get '/end_users/:id' => 'end_users#show', as: 'end_user'
     patch '/end_users/withdraw' => 'end_users#withdraw'
-    resources :scorings, only: [:index, :show]
+    resources :scorings, only: [:index]
     resources :mahjong_hands, only: [:index, :show]
     resources :recruitments do
       resource :favorites,only: [:create, :destroy]
       resources :replies,only: [:create, :destroy]
     end
     get "search" => "searches#search"
-    get '*path', to: 'homes#top'
   end
   
   #管理者
