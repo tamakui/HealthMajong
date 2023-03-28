@@ -30,9 +30,14 @@ class EndUser < ApplicationRecord
   
   #ゲストユーザー
   def self.guest
-    find_or_create_by!(login_name: 'guestuser' ,email: 'test@test.com') do |user|
+    find_or_create_by!(email: 'test@test.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.login_name = "guestuser"
+      user.last_name = "ゲスト"
+      user.first_name = "ゲスト"
+      user.last_name_kana = "ゲスト"
+      user.first_name_kana = "ゲスト"
+      
     end
   end
   
