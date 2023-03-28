@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       resources :replies,only: [:create, :destroy]
     end
     get "search" => "searches#search"
+    get '*path', to: 'homes#top'
   end
   
   #管理者
