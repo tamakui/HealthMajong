@@ -9,8 +9,9 @@ class EndUser < ApplicationRecord
   has_many :replies, dependent: :destroy
   has_many :favorites, dependent: :destroy
   
+  validates :last_name, :first_name, :last_name_kana, :first_name_kana, presence: true, length: { maximum: 20 }
   validates :login_name, length: { minimum: 2, maximum: 20 }
-  validates :email, uniqueness: true
+  validates :email, presence: true, uniqueness: true
   validates :introduction, length: { maximum: 100 }
   
   #退会済みのユーザーが同じアカウントでログインできない

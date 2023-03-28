@@ -27,7 +27,7 @@
         </div>
         <div class='end_user-field'>
           <%= f.label :"自己紹介文" %>
-          <%= f.text_field :introduction, autofocus: true %>
+          <%= f.text_field :introduction,placeholder: "100文字まで", autofocus: true %>
         </div>
         <%= f.submit "編集内容を保存", class: "btn btn-success" %>
         <%= link_to '退会する', end_users_unsubscribe_path, class: "btn btn-secondary" %>
