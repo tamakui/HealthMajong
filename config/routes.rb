@@ -38,13 +38,14 @@ Rails.application.routes.draw do
     resources :end_users, only: [:index, :show, :edit, :update]
     resources :mahjong_hands, only: [:new, :index, :show, :edit, :create, :update, :destroy]
     resources :genres, only: [:index, :edit, :create, :update, :destroy]
-  
-    get '*path', to: 'homes#top'
+
   end
   
   #ゲストユーザーログイン
   devise_scope :end_user do
     post 'end_users/guest_sign_in', to: 'public/sessions#guest_sign_in'
   end
+
+  get '*path', to: 'application#data_not_found'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
