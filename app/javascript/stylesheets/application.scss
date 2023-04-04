@@ -1,13 +1,4 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import './public_registrations';
+@import './public_end_users';
 
-.container-card {
-  width: 90;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card {
-  margin-bottom: 10px;
-}
