@@ -1,43 +1,47 @@
 <div class='container'>
   <div class='row'>
-    <div class='col-9 mx-auto text-center'>      
+    <div class='col-9 mx-auto text-center'>
       <h1>コメント詳細</h1>
-      <div>
-        <p>タイトル</p>
-          <%= @recruitment.title %>
-        <p>コメント</p>
-          <%= @recruitment.comment %>
-        <p>ユーザー名</p>
-          <%= @recruitment.end_user.login_name %>
-        <p>投稿日</p>
-          <%= @recruitment.created_at.strftime('%Y/%m/%d') %>
-        <%= render "public/favorites/btn", recruitment: @recruitment %>
-        <% if@recruitment.end_user == current_end_user %>
-          <%= link_to '編集', edit_recruitment_path(@recruitment) %>
-          <%= button_to '削除', recruitment_path(@recruitment), method: :delete, data: { confirm: '本当に消しますか？' } %>
-        <% end %>
-      </div>
-      
-      
-      <div>
-        <p>コメント件数：<%= @recruitment.replies.count %></p>
-        <% @recruitment.replies.each do |reply| %>
-          <p><%= image_tag reply.end_user.get_profile_image(100,100) %></p>
-          <%= reply.end_user.login_name %>
-          <%= reply.created_at.strftime('%Y/%m/%d') %><%= reply.comment %>
-          <% if reply.end_user == current_end_user %>
-            <%= button_to "削除", recruitment_reply_path(reply.recruitment.id,reply.id),method: :delete %>
+    </div>
+      <div class="container-card">
+        <div class="card" style="width: 18rem;">
+          <div class='col-6 mx-auto'>
+            <p>ユーザー名</p>
+            <%= @recruitment.end_user.login_name %>
+            <p>タイトル</p>
+            <%= @recruitment.title %>
+            <p>コメント</p>
+            <%= @recruitment.comment %>
+            <p>投稿日</p>
+            <%= @recruitment.created_at.strftime('%Y/%m/%d') %><br>
+            <% if@recruitment.end_user == current_end_user %>
+              <%= link_to '編集', edit_recruitment_path(@recruitment) %>
+              <%= link_to '削除', recruitment_path(@recruitment), method: :delete, data: { confirm: '本当に消しますか？' } %>
+            <% end %>
+          </div>
+        <div class="card">
+          <%= render "public/favorites/btn", recruitment: @recruitment %>
+          <p>コメント件数：<%= @recruitment.replies.count %></p>
+        </div>
+        <div>
+          <% @recruitment.replies.each do |reply| %>
+            <p><%= image_tag reply.end_user.get_profile_image(100,100) %></p>
+            <p>ユーザー名</p>
+            <%= reply.end_user.login_name %>
+            <p>投稿日</p>
+            <%= reply.created_at.strftime('%Y/%m/%d') %><%= reply.comment %>
+            <% if reply.end_user == current_end_user %>
+              <%= link_to "削除", recruitment_reply_path(reply.recruitment.id,reply.id),method: :delete %>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
-      
-      
-      <div>
-        <%= form_with model: [@recruitment, @reply] do |f| %>
-          <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに　100文字以内" %>
-          <%= f.submit "送信する" %>
-        <% end %>
-      </div>
+        </div>
+        <div>
+          <%= form_with model: [@recruitment, @reply] do |f| %>
+            <p>コメント</p>
+            <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに　100文字以内" %><br>
+            <%= f.submit "送信する" %>
+          <% end %>
+        </div>
     </div>
   </div>
-</div> 
+</div>
