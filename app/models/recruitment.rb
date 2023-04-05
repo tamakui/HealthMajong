@@ -1,5 +1,5 @@
 class Recruitment < ApplicationRecord
-  has_one_attached :image
+  has_one_attached :profile_image
   belongs_to :end_user
   has_many :replies, dependent: :destroy
   has_many :favorites, dependent: :destroy

@@ -1,13 +1,18 @@
-<div class='container'>
+<div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-9 mx-auto text-center'>
+    <div class='col-sm-8 px-sm-0 offset-sm-1'>
       <h1>コメント一覧</h1>
+    </div>
+    <div class="container-card">
       <% @recruitments.each do |recruitment| %>
-        <div>
-          <p>タイトル:<%= recruitment.title %></p>
-          <p>コメント:<%= recruitment.comment %></p>
-          <p>ユーザー名:<%= recruitment.end_user.login_name %></p>
-          <%= link_to "コメント詳細", recruitment_path(recruitment.id) %><br>
+        <div class="card" style="width: 18rem;">
+          <%#= image_tag end_user.get_profile_image(100, 100), size:'100x100' %>
+          <div class="card-body">
+            <p>ユーザー名:<%= recruitment.end_user.login_name %></p>
+            <p>タイトル:<%= recruitment.title %></p>
+            <p>コメント:<%= recruitment.comment %></p>
+            <%= link_to "コメント詳細", recruitment_path(recruitment.id) %><br>
+          </div>
         </div>
       <% end %>
     </div>
