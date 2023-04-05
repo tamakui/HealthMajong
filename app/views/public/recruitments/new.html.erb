@@ -1,13 +1,13 @@
 <div class='container'>
   <div class='row'>
-    <div class='col-9 mx-auto text-center'>
-      <h1 class="mt-5">コメント</h1>
+    <div class='col-5 mx-auto text-center'>
+      <h1 class="my-5">コメント</h1>
       <%= form_with model: @recruitment do |f| %>
       <p>タイトル</p>
-      <%= f.text_field :title, placeholder: "麻雀アプリ名 20文字以内" %>
+      <%= f.text_field :title, placeholder: "麻雀アプリ名 20文字以内", class: "form-control" %>
       <p>コメント</p>
-      <%= f.text_area :comment, placeholder: "部屋番、募集中 100文字以内" %></br>
-      <%= f.submit '投稿' %>
+      <%= f.text_area :comment, placeholder: "部屋番、募集中 100文字以内", class: "form-control" %></br>
+      <%= f.submit '投稿', class: "btn btn-info btn-lg btn-block" %>
       <% end %>
     </div>
   </div>
