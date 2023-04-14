@@ -27,8 +27,32 @@
                   <td class="text-success">有効</td>
                 <% else %>
                   <td class="text-muted">退会</td>
-                <% end %>  
+                <% end %>
                 <td><%= link_to "削除", admin_home_path(@recruitment), method: :delete %></td>
+              </tr>
+          </tbody>
+        </table>
+        <h1>コメント返信</h1>
+        <table class="table table">
+          <thead class="table-active">
+            <tr>
+              <th scope="col">会員ID</th>
+              <th scope="col">ログイン名</th>
+              <th scope="col">投稿日</th>
+              <th scope="col">コメント</th>
+              <th scope="col">メールアドレス</th>
+              <th scope="col">会員ステータス</th>
+              <th scope="col">削除</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <% @recuitment.replies.each do |reply| %>
+                  <th scope="row"><%= reply.end_user.id %></th>
+                  <td><%= reply.end_user.login_name %></td>
+                  <td><%= reply.created_at.strftime('%Y/%m/%d') %></td>
+                  <td><%= reply.comment %></td>
+                <% end %>
               </tr>
           </tbody>
         </table>

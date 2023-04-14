@@ -6,7 +6,11 @@
           <tbody>
             <tr>
               <td>会員ID</td>
-              <td><%= @end_user_id %></td>
+              <td><%= @end_user.id %></td>
+            </tr>
+            <tr>
+              <td>プロフィール画像</td>
+              <td><%= image_tag @end_user.get_profile_image(100, 100), size:'100x100' %></td>
             </tr>
             <tr>
               <td>氏名</td>
