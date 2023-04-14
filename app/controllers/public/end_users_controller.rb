@@ -53,5 +53,6 @@ class Public::EndUsersController < ApplicationController
     if !@user || current_end_user.email == "test@test.com" || @user != current_end_user
       redirect_to root_path
     end
-  end  
+  end
+  
 end

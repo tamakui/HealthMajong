@@ -53,4 +53,5 @@ class Admin::MahjongHandsController < ApplicationController
   def mahjong_hand_params
     params.require(:mahjong_hand).permit(:name, :describe, :image, :genre_id)
   end
+  
 end

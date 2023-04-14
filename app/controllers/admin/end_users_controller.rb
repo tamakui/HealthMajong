@@ -19,7 +19,7 @@ class Admin::EndUsersController < ApplicationController
       flash[:notice] = "編集が成功しました"
       redirect_to admin_end_user_path(@end_user)
     else
-      flash[:notice] = "正しい入力を"
+      flash[:notice] = "正しい入力をお願いします"
       render 'edit'
     end
   end
