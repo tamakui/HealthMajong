@@ -7,7 +7,6 @@ class Admin::HomesController < ApplicationController
   
   def show
     @recruitment = Recruitment.find(params[:recruitment_id])
-    
   end
   
   def destroy

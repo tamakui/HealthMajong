@@ -2,11 +2,13 @@
   <div class='row'>
     <div class='col-11'>
         <h3>会員ページ</h3>
-      
+
       <table class='table'>
         <thead>
           <tr>プロフィール画像</tr>
-          <tr><%= image_tag @end_user.get_profile_image(100, 100), size:'100x100' %></tr>
+          <tr>
+            <%= image_tag @end_user.get_profile_image(100, 100), size:'100x100' %>
+          </tr>
           <tr>
             <th>ログイン名</th>
             <th><%= @end_user.login_name %></th>
