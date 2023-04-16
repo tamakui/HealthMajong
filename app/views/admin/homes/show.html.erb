@@ -46,8 +46,8 @@
             </tr>
           </thead>
           <tbody>
-              <tr>
-                <% @recruitment.replies.each do |reply| %>
+              <% @recruitment.replies.each do |reply| %>
+                <tr>
                   <th scope="row"><%= reply.end_user.id %></th>
                   <td><%= reply.end_user.login_name %></td>
                   <td><%= reply.created_at.strftime('%Y/%m/%d') %></td>
@@ -59,8 +59,8 @@
                     <td class="text-muted">退会</td>
                   <% end %>
                   <td><%= link_to "削除", admin_reply_path(reply), method: :delete %></td>
-                <% end %>
-              </tr>
+                </tr>
+              <% end %>
           </tbody>
         </table>
     </div>
