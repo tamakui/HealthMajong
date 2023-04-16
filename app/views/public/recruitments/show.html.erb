@@ -29,8 +29,10 @@
             <p><%= image_tag reply.end_user.get_profile_image(100,100) %></p>
             <p>ユーザー名</p>
             <%= reply.end_user.login_name %>
+            <p>返信コメント</p>
+            <%= reply.comment %>
             <p>投稿日</p>
-            <%= reply.created_at.strftime('%Y/%m/%d') %><%= reply.comment %>
+            <%= reply.created_at.strftime('%Y/%m/%d') %>
             <% if reply.end_user == current_end_user %>
               <%= link_to "削除", recruitment_reply_path(reply.recruitment.id,reply.id),method: :delete %>
             <% end %>
