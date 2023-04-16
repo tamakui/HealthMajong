@@ -1,9 +1,10 @@
 class Public::EndUsersController < ApplicationController
   before_action :authenticate_end_user!
   before_action :ensure_guest_user, only: [:edit, :update]
+  before_action :end_user_is_deleted, only: [:show]
   
   def index
-    @end_users = EndUser.all
+    @end_users = EndUser.where(is_deleted: false)
   end
   
   def show
@@ -51,6 +52,13 @@ class Public::EndUsersController < ApplicationController
   def ensure_guest_user
     @user = EndUser.find_by(id: params[:id])
     if !@user || current_end_user.email == "test@test.com" || @user != current_end_user
+      redirect_to root_path
+    end
+  end
+  
+  def end_user_is_deleted
+    @end_user = EndUser.find(params[:id])
+    if @end_user.is_deleted == true
       redirect_to root_path
     end
   end
