@@ -6,7 +6,7 @@
     <div class="container-card">
       <% @recruitments.each do |recruitment| %>
         <div class="card" style="width: 18rem;">
-          <%#= image_tag end_user.get_profile_image(100, 100), size:'100x100' %>
+          <%= image_tag recruitment.end_user.get_profile_image(100, 100), size:'100x100' %>
           <div class="card-body">
             <p>ユーザー名:<%= recruitment.end_user.login_name %></p>
             <p>タイトル:<%= recruitment.title %></p>
