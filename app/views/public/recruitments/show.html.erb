@@ -3,8 +3,8 @@
     <div class='col-9 mx-auto text-center'>
       <h1>コメント詳細</h1>
     </div>
-      <div class>
-        <div class="card" style="width: 18rem;">
+      <div class='col-9 mx-auto'>
+        <div class="card">
           <div class='col-6 mx-auto'>
             <p><%= image_tag @recruitment.end_user.get_profile_image(100,100) %></p>
             <p>ユーザー名</p>
@@ -24,7 +24,7 @@
           <%= render "public/favorites/btn", recruitment: @recruitment %>
           <p>コメント件数：<%= @recruitment.replies.count %></p>
         </div>
-        <div>
+        <div class='col-6 mx-auto'>
           <% @recruitment.replies.each do |reply| %>
             <p><%= image_tag reply.end_user.get_profile_image(100,100) %></p>
             <p>ユーザー名</p>
@@ -38,7 +38,7 @@
             <% end %>
           <% end %>
         </div>
-        <div>
+        <div class='col-6 mx-auto'>
           <%= form_with model: [@recruitment, @reply] do |f| %>
             <p>コメント</p>
             <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに　100文字以内" %><br>
