@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     get 'top' => 'homes#top', as: 'top'
     get 'show/:recruitment_id' => 'homes#show', as: 'show'
     resources :homes, only: [:show, :destroy]
+    resources :replies,only: [:destroy]
     resources :end_users, only: [:index, :show, :edit, :update]
     resources :mahjong_hands, only: [:new, :index, :show, :edit, :create, :update, :destroy]
     resources :genres, only: [:index, :edit, :create, :update, :destroy]

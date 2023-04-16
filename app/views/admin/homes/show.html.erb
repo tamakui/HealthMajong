@@ -47,11 +47,18 @@
           </thead>
           <tbody>
               <tr>
-                <% @recuitment.replies.each do |reply| %>
+                <% @recruitment.replies.each do |reply| %>
                   <th scope="row"><%= reply.end_user.id %></th>
                   <td><%= reply.end_user.login_name %></td>
                   <td><%= reply.created_at.strftime('%Y/%m/%d') %></td>
                   <td><%= reply.comment %></td>
+                  <td><%= reply.end_user.email %></td>
+                  <%if @recruitment.end_user.is_deleted == false %>
+                    <td class="text-success">有効</td>
+                  <% else %>
+                    <td class="text-muted">退会</td>
+                  <% end %>
+                  <td><%= link_to "削除", admin_reply_path(reply), method: :delete %></td>
                 <% end %>
               </tr>
           </tbody>
